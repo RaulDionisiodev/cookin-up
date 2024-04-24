@@ -61,11 +61,11 @@
 
     @media only screen and (max-width: 767px) {
         .banner {
-        padding: 4rem 1.5rem;
-    }
+            padding: 4rem 1.5rem;
+        }
 
         .foto-banner {
-        width: min(100%, 21.25rem);
-    }
+            width: min(100%, 21.25rem);
+        }
     }
     </style>
