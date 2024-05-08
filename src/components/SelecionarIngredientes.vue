@@ -2,6 +2,7 @@
 import { obterCategorias } from '@/http';
 import type Icategoria from '@/interfaces/ICategoria';
 import CardCategoria from './CardCategoria.vue';
+import BotaoPrincipal from './BotaoPrincipal.vue';
 
 export default {
     data() {
@@ -13,7 +14,7 @@ export default {
     async created() { // método de ciclo de vida - executado depois que as propriedades de data() já tiverem sido definidas
         this.categorias = await obterCategorias();
     },
-    components: { CardCategoria },
+    components: { CardCategoria, BotaoPrincipal },
     emits: ['adicionarIngrediente', 'removerIngrediente']
 }
 </script>
@@ -40,6 +41,8 @@ export default {
         <p class="paragrafo dica">
             * Atenção: consideramos que você tem em casa sal, pimenta e água.
         </p>
+
+        <BotaoPrincipal texto="Buscar receitas!" />
     </section>
 </template>
 
