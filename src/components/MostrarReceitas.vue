@@ -1,0 +1,4 @@
+<template>
+
+    mostrando receitas...
+</template>
