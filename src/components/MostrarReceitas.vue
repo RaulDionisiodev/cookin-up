@@ -86,9 +86,9 @@ section {
 
 .mostrar-receita-container {
     display: grid;
-    grid-template-columns: auto auto;
-    row-gap: 5em;
-    column-gap: 5em;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 2em;
+    column-gap: 2em;
 }
 
 .mostar-receita-botao {
@@ -104,6 +104,26 @@ section {
     img {
         width: 300px;
         height: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .mostrar-receita-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 2em;
+        column-gap: 2em;
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+    .mostrar-receita-container {
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 2em;
+        column-gap: 2em;
     }
 }
 </style>
