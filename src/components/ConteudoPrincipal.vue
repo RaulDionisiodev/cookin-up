@@ -45,7 +45,9 @@
       @buscar-receitas="navegar('MostarReceitas')"
       />
       
-      <MostrarReceitas v-else-if="conteudo === 'MostarReceitas'"  @editar-receitas="navegar('SelecionarIngredientes')"/>
+      <MostrarReceitas v-else-if="conteudo === 'MostarReceitas'"  
+        @editar-receitas="navegar('SelecionarIngredientes')"
+        :ingredientes="ingredientes"/>
       
     </KeepAlive>
   </main>

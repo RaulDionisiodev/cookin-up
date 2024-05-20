@@ -37,8 +37,13 @@ import CardReceita from "./CardReceita.vue";
 import { obterReceitas } from "@/http";
 import type IReceita from "@/interfaces/IReceita";
 import BotaoPrincipal from "./BotaoPrincipal.vue";
+import type { PropType } from "vue";
+import { itensDeListaEstaoEmOutraLista } from "@/operacoes/listas";
 
 export default {
+    props : {
+        ingredientes : {type: Array as PropType<string[]>, required: true}
+    },
     components: {CardReceita, BotaoPrincipal},
     emits: ['editarReceitas'],
     data() {
@@ -48,7 +53,14 @@ export default {
         }
     },
     async created() { 
-        this.receitas = await obterReceitas();
+        const receitasEmcontrdads = await obterReceitas();
+        this.receitas = receitasEmcontrdads.filter((receita) => {
+           
+            const possoFazerReceita = itensDeListaEstaoEmOutraLista(receita.ingredientes, this.ingredientes)
+            console.log(possoFazerReceita)
+
+            return possoFazerReceita
+        })
         this.qtdReceitas = this.receitas.length
     }
 }
